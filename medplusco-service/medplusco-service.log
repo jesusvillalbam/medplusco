@@ -2643,3 +2643,752 @@ java.lang.StackOverflowError: null
 2018-04-24 18:49:29.412  INFO 18688 --- [http-nio-8080-exec-3] c.m.s.i.PlanAdministradoraServicioImpl   : Buscando Plan de Administradora por Id: 11
 2018-04-24 18:49:29.475  INFO 18688 --- [http-nio-8080-exec-3] c.m.c.PlanAdministradoraControlador      : Ejecutanto medoto buscarPlanAdministradora(): PlanAdministradora{id=11, nombre=Nueva EPS - Capita, codigo=EPS032, contrato=001, fechaInicial=null, fechaFinal=2017-12-31 00:00:00.0, valorContrato=5000.0, activo=S, createdAt=null, updatedAt=null}
 2018-04-24 18:49:29.529  WARN 18688 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to write HTTP message: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS); nested exception is com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.medplusco.dao.modelo.PlanAdministradora["administradora"]->com.medplusco.dao.modelo.Administradora_$$_jvst2e_0["handler"])
+2018-04-24 21:46:33.795  INFO 6328 --- [main] com.medplusco.MedpluscoApplicationTests  : Starting MedpluscoApplicationTests on D35KP0W3RT with PID 6328 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 21:46:33.810  INFO 6328 --- [main] com.medplusco.MedpluscoApplicationTests  : No active profile set, falling back to default profiles: default
+2018-04-24 21:46:33.852  INFO 6328 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3d5c822d: startup date [Tue Apr 24 21:46:33 COT 2018]; root of context hierarchy
+2018-04-24 21:46:35.901  INFO 6328 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 21:46:36.628  INFO 6328 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:46:37.732  WARN 6328 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradoras in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+2018-04-24 21:46:37.750  INFO 6328 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-24 21:46:37.783 ERROR 6328 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradoras in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradoras in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:769) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:719) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 41 common frames omitted
+
+2018-04-24 21:46:37.830 ERROR 6328 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7f9fcf7f] to prepare test instance [com.medplusco.MedpluscoApplicationTests@4eba373c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradoras in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 26 common frames omitted
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradoras in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:769) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:719) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 41 common frames omitted
+
+2018-04-24 21:50:15.104  INFO 16420 --- [main] com.medplusco.MedpluscoApplicationTests  : Starting MedpluscoApplicationTests on D35KP0W3RT with PID 16420 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 21:50:15.113  INFO 16420 --- [main] com.medplusco.MedpluscoApplicationTests  : No active profile set, falling back to default profiles: default
+2018-04-24 21:50:15.152  INFO 16420 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3d5c822d: startup date [Tue Apr 24 21:50:15 COT 2018]; root of context hierarchy
+2018-04-24 21:50:17.214  INFO 16420 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 21:50:18.082  INFO 16420 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:50:18.941  WARN 16420 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradora in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+2018-04-24 21:50:18.952  INFO 16420 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-24 21:50:18.959 ERROR 16420 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradora in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradora in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:769) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:719) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 41 common frames omitted
+
+2018-04-24 21:50:18.981 ERROR 16420 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7f9fcf7f] to prepare test instance [com.medplusco.MedpluscoApplicationTests@4eba373c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradora in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 26 common frames omitted
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.administradora in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:769) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:719) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 41 common frames omitted
+
+2018-04-24 21:51:28.684  INFO 2260 --- [main] com.medplusco.MedpluscoApplicationTests  : Starting MedpluscoApplicationTests on D35KP0W3RT with PID 2260 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 21:51:28.684  INFO 2260 --- [main] com.medplusco.MedpluscoApplicationTests  : No active profile set, falling back to default profiles: default
+2018-04-24 21:51:28.734  INFO 2260 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3d5c822d: startup date [Tue Apr 24 21:51:28 COT 2018]; root of context hierarchy
+2018-04-24 21:51:30.488  INFO 2260 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 21:51:31.173  INFO 2260 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:51:31.951  WARN 2260 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.adm_id in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+2018-04-24 21:51:31.963  INFO 2260 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-24 21:51:31.970 ERROR 2260 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.adm_id in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.adm_id in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:769) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:719) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 41 common frames omitted
+
+2018-04-24 21:51:31.978 ERROR 2260 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7f9fcf7f] to prepare test instance [com.medplusco.MedpluscoApplicationTests@4eba373c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.adm_id in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.9.RELEASE.jar:1.5.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 26 common frames omitted
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.medplusco.dao.modelo.PlanAdministradora.adm_id in com.medplusco.dao.modelo.Administradora.planesAdministradoras
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:769) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:719) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336) ~[spring-orm-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	... 41 common frames omitted
+
+2018-04-24 21:53:30.768  INFO 9632 --- [main] com.medplusco.MedpluscoApplicationTests  : Starting MedpluscoApplicationTests on D35KP0W3RT with PID 9632 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 21:53:30.775  INFO 9632 --- [main] com.medplusco.MedpluscoApplicationTests  : No active profile set, falling back to default profiles: default
+2018-04-24 21:53:30.831  INFO 9632 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3d5c822d: startup date [Tue Apr 24 21:53:30 COT 2018]; root of context hierarchy
+2018-04-24 21:53:33.207  INFO 9632 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 21:53:33.912  INFO 9632 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:53:35.859  INFO 9632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:53:36.991  INFO 9632 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@25cc7470] of Hibernate SessionFactory for HibernateTransactionManager
+2018-04-24 21:53:38.951  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3d5c822d: startup date [Tue Apr 24 21:53:30 COT 2018]; root of context hierarchy
+2018-04-24 21:53:39.141  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.actualizarAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradoras],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Administradora>> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoras()
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradora(java.lang.Long)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoraPorNit(java.lang.String)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.AdministradoraControlador.eliminarAdministradora(java.lang.Long)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.crearAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.actualizarEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresaPorNit(java.lang.String)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.crearEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresa(java.lang.Long)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Eliminar/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.EmpresaControlador.eliminarEmpresa(java.lang.String)
+2018-04-24 21:53:39.158  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresas],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Empresa>> com.medplusco.controlador.EmpresaControlador.buscarEmpresas()
+2018-04-24 21:53:39.175  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.actualizarPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 21:53:39.175  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.PlanAdministradoraControlador.eliminarPlanAdministradora(java.lang.Long)
+2018-04-24 21:53:39.175  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradora(java.lang.Long)
+2018-04-24 21:53:39.175  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CrearPlanAdministradoras],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 21:53:39.175  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/codigo/{codigo}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradoraPorCodigo(java.lang.String)
+2018-04-24 21:53:39.199  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 21:53:39.199  INFO 9632 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 21:53:39.248  INFO 9632 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 21:53:39.248  INFO 9632 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 21:53:39.314  INFO 9632 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 21:53:39.657  INFO 9632 --- [main] com.medplusco.MedpluscoApplicationTests  : Started MedpluscoApplicationTests in 9.375 seconds (JVM running for 10.54)
+2018-04-24 21:53:39.849  INFO 9632 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3d5c822d: startup date [Tue Apr 24 21:53:30 COT 2018]; root of context hierarchy
+2018-04-24 21:53:39.859  INFO 9632 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:54:50.390  INFO 17076 --- [main] com.medplusco.MedpluscoApplication       : Starting MedpluscoApplication on D35KP0W3RT with PID 17076 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 21:54:50.403  INFO 17076 --- [main] com.medplusco.MedpluscoApplication       : No active profile set, falling back to default profiles: default
+2018-04-24 21:54:50.438  INFO 17076 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@80169cf: startup date [Tue Apr 24 21:54:50 COT 2018]; root of context hierarchy
+2018-04-24 21:54:52.025  INFO 17076 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-04-24 21:54:52.047  INFO 17076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-04-24 21:54:52.052  INFO 17076 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-24 21:54:52.133  INFO 17076 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-24 21:54:52.133  INFO 17076 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1695 ms
+2018-04-24 21:54:52.263  INFO 17076 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-24 21:54:52.268  INFO 17076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 21:54:52.268  INFO 17076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 21:54:52.271  INFO 17076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 21:54:52.272  INFO 17076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 21:54:52.312  INFO 17076 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 21:54:52.627  INFO 17076 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:54:53.347  INFO 17076 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 21:54:53.716  INFO 17076 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@5149f008] of Hibernate SessionFactory for HibernateTransactionManager
+2018-04-24 21:54:53.962  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@80169cf: startup date [Tue Apr 24 21:54:50 COT 2018]; root of context hierarchy
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradoras],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Administradora>> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoras()
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoraPorNit(java.lang.String)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.actualizarAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.crearAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.AdministradoraControlador.eliminarAdministradora(java.lang.Long)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradora(java.lang.Long)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.actualizarEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresaPorNit(java.lang.String)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresa(java.lang.Long)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Eliminar/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.EmpresaControlador.eliminarEmpresa(java.lang.String)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.crearEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 21:54:54.028  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresas],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Empresa>> com.medplusco.controlador.EmpresaControlador.buscarEmpresas()
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/codigo/{codigo}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradoraPorCodigo(java.lang.String)
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.PlanAdministradoraControlador.eliminarPlanAdministradora(java.lang.Long)
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradora(java.lang.Long)
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CrearPlanAdministradoras],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.actualizarPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 21:54:54.045  INFO 17076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 21:54:54.080  INFO 17076 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 21:54:54.080  INFO 17076 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 21:54:54.112  INFO 17076 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 21:54:54.313  INFO 17076 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-24 21:54:54.493  INFO 17076 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-04-24 21:54:54.500  INFO 17076 --- [main] com.medplusco.MedpluscoApplication       : Started MedpluscoApplication in 4.359 seconds (JVM running for 4.722)
+2018-04-24 21:55:21.094  INFO 17076 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-24 21:55:21.094  INFO 17076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-24 21:55:21.113  INFO 17076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2018-04-24 21:55:21.145  INFO 17076 --- [http-nio-8080-exec-1] c.m.s.i.PlanAdministradoraServicioImpl   : Buscando Plan de Administradora por Id: 11
+2018-04-24 21:55:21.225  INFO 17076 --- [http-nio-8080-exec-1] c.m.c.PlanAdministradoraControlador      : Ejecutanto medoto buscarPlanAdministradora(): PlanAdministradora{id=11, nombre=Nueva EPS - Capita, codigo=EPS032, contrato=001, fechaInicial=null, fechaFinal=2017-12-31 00:00:00.0, valorContrato=5000.0, activo=S, createdAt=null, updatedAt=null}
+2018-04-24 21:55:21.302  WARN 17076 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to write HTTP message: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS); nested exception is com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.medplusco.dao.modelo.PlanAdministradora["administradora"]->com.medplusco.dao.modelo.Administradora_$$_jvst2d_0["handler"])
+2018-04-24 21:55:44.222  INFO 17076 --- [http-nio-8080-exec-4] c.m.c.PlanAdministradoraControlador      : Ejecutanto medoto crearPlanAdministradora(): PlanAdministradora{id=null, nombre=Nueva EPS - Cata, codigo=EPS032, contrato=031, fechaInicial=null, fechaFinal=Sun Dec 31 19:00:00 COT 2017, valorContrato=5000.0, activo=S, createdAt=null, updatedAt=null}
+2018-04-24 21:55:44.250  INFO 17076 --- [http-nio-8080-exec-4] c.m.s.i.PlanAdministradoraServicioImpl   : Creando Plan de Administradora: Administradora{id=5, codigo=EPS032, nit=992239002, digitoVerificacion=0, nombreAdministradora=SALUD TOTAL, direccion=CRA, telefono=11231, representanteLegal=JESUS VILLALBA, activo=S}
+2018-04-24 21:55:44.352  INFO 17076 --- [http-nio-8080-exec-4] c.m.s.i.PlanAdministradoraServicioImpl   : Buscando Plan de Administradora por Codigo: EPS032
+2018-04-24 21:55:44.385 ERROR 17076 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: result returns more than one elements; nested exception is javax.persistence.NonUniqueResultException: result returns more than one elements] with root cause
+
+javax.persistence.NonUniqueResultException: result returns more than one elements
+	at org.hibernate.jpa.internal.QueryImpl.getSingleResult(QueryImpl.java:539) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:208) ~[spring-data-jpa-1.11.9.RELEASE.jar:na]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:87) ~[spring-data-jpa-1.11.9.RELEASE.jar:na]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:116) ~[spring-data-jpa-1.11.9.RELEASE.jar:na]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:106) ~[spring-data-jpa-1.11.9.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:499) ~[spring-data-commons-1.13.9.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:477) ~[spring-data-commons-1.13.9.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56) ~[spring-data-commons-1.13.9.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282) ~[spring-tx-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133) ~[spring-data-jpa-1.11.9.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.9.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at com.sun.proxy.$Proxy92.findByCodigo(Unknown Source) ~[na:na]
+	at com.medplusco.servicio.impl.PlanAdministradoraServicioImpl.buscarPlanAdministradoraPorCodigo(PlanAdministradoraServicioImpl.java:44) ~[classes/:na]
+	at com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(PlanAdministradoraControlador.java:87) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.13.RELEASE.jar:4.3.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
+
+2018-04-24 21:57:07.556  INFO 17076 --- [http-nio-8080-exec-6] c.m.s.i.PlanAdministradoraServicioImpl   : Buscando Plan de Administradora por Id: 11
+2018-04-24 21:57:07.573  INFO 17076 --- [http-nio-8080-exec-6] c.m.c.PlanAdministradoraControlador      : Ejecutanto medoto buscarPlanAdministradora(): PlanAdministradora{id=11, nombre=Nueva EPS - Capita, codigo=EPS032, contrato=001, fechaInicial=null, fechaFinal=2017-12-31 00:00:00.0, valorContrato=5000.0, activo=S, createdAt=null, updatedAt=null}
+2018-04-24 21:57:07.577  WARN 17076 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to write HTTP message: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS); nested exception is com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.medplusco.dao.modelo.PlanAdministradora["administradora"]->com.medplusco.dao.modelo.Administradora_$$_jvst2d_0["handler"])
+2018-04-24 22:15:51.195  INFO 12028 --- [main] com.medplusco.MedpluscoApplicationTests  : Starting MedpluscoApplicationTests on D35KP0W3RT with PID 12028 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 22:15:51.197  INFO 12028 --- [main] com.medplusco.MedpluscoApplicationTests  : No active profile set, falling back to default profiles: default
+2018-04-24 22:15:51.258  INFO 12028 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@10d307f1: startup date [Tue Apr 24 22:15:51 COT 2018]; root of context hierarchy
+2018-04-24 22:15:53.134  INFO 12028 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 22:15:53.869  INFO 12028 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:15:55.232  INFO 12028 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:15:55.948  INFO 12028 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@5d28bcd5] of Hibernate SessionFactory for HibernateTransactionManager
+2018-04-24 22:15:56.854  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@10d307f1: startup date [Tue Apr 24 22:15:51 COT 2018]; root of context hierarchy
+2018-04-24 22:15:57.026  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradoras],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Administradora>> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoras()
+2018-04-24 22:15:57.027  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradora(java.lang.Long)
+2018-04-24 22:15:57.039  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.AdministradoraControlador.eliminarAdministradora(java.lang.Long)
+2018-04-24 22:15:57.039  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoraPorNit(java.lang.String)
+2018-04-24 22:15:57.047  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.actualizarAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:15:57.053  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.crearAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:15:57.058  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.actualizarEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:15:57.061  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresaPorNit(java.lang.String)
+2018-04-24 22:15:57.063  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresas],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Empresa>> com.medplusco.controlador.EmpresaControlador.buscarEmpresas()
+2018-04-24 22:15:57.065  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresa(java.lang.Long)
+2018-04-24 22:15:57.066  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Eliminar/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.EmpresaControlador.eliminarEmpresa(java.lang.String)
+2018-04-24 22:15:57.070  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.crearEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:15:57.086  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/codigo/{codigo}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradoraPorCodigo(java.lang.String)
+2018-04-24 22:15:57.086  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.actualizarPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:15:57.100  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradora(java.lang.Long)
+2018-04-24 22:15:57.101  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.PlanAdministradoraControlador.eliminarPlanAdministradora(java.lang.Long)
+2018-04-24 22:15:57.112  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CrearPlanAdministradoras],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:15:57.115  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 22:15:57.116  INFO 12028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 22:15:57.189  INFO 12028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:15:57.189  INFO 12028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:15:57.284  INFO 12028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:15:57.834  INFO 12028 --- [main] com.medplusco.MedpluscoApplicationTests  : Started MedpluscoApplicationTests in 7.175 seconds (JVM running for 8.117)
+2018-04-24 22:15:57.916  INFO 12028 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@10d307f1: startup date [Tue Apr 24 22:15:51 COT 2018]; root of context hierarchy
+2018-04-24 22:15:57.927  INFO 12028 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:16:14.493  INFO 18740 --- [main] com.medplusco.MedpluscoApplication       : Starting MedpluscoApplication on D35KP0W3RT with PID 18740 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 22:16:14.496  INFO 18740 --- [main] com.medplusco.MedpluscoApplication       : No active profile set, falling back to default profiles: default
+2018-04-24 22:16:14.541  INFO 18740 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57f23557: startup date [Tue Apr 24 22:16:14 COT 2018]; root of context hierarchy
+2018-04-24 22:16:16.104  INFO 18740 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-04-24 22:16:16.118  INFO 18740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-04-24 22:16:16.120  INFO 18740 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-24 22:16:16.203  INFO 18740 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-24 22:16:16.203  INFO 18740 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1665 ms
+2018-04-24 22:16:16.324  INFO 18740 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-24 22:16:16.328  INFO 18740 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 22:16:16.329  INFO 18740 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 22:16:16.329  INFO 18740 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 22:16:16.329  INFO 18740 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 22:16:16.364  INFO 18740 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 22:16:16.665  INFO 18740 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:16:17.406  INFO 18740 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:16:17.782  INFO 18740 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@41200e0c] of Hibernate SessionFactory for HibernateTransactionManager
+2018-04-24 22:16:18.025  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57f23557: startup date [Tue Apr 24 22:16:14 COT 2018]; root of context hierarchy
+2018-04-24 22:16:18.092  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.actualizarAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:16:18.096  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoraPorNit(java.lang.String)
+2018-04-24 22:16:18.097  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.crearAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:16:18.098  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradoras],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Administradora>> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoras()
+2018-04-24 22:16:18.099  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.AdministradoraControlador.eliminarAdministradora(java.lang.Long)
+2018-04-24 22:16:18.099  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradora(java.lang.Long)
+2018-04-24 22:16:18.102  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.actualizarEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:16:18.103  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresaPorNit(java.lang.String)
+2018-04-24 22:16:18.104  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Eliminar/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.EmpresaControlador.eliminarEmpresa(java.lang.String)
+2018-04-24 22:16:18.105  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresa(java.lang.Long)
+2018-04-24 22:16:18.106  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresas],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Empresa>> com.medplusco.controlador.EmpresaControlador.buscarEmpresas()
+2018-04-24 22:16:18.107  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.crearEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:16:18.110  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CrearPlanAdministradoras],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:16:18.111  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.actualizarPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:16:18.113  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.PlanAdministradoraControlador.eliminarPlanAdministradora(java.lang.Long)
+2018-04-24 22:16:18.114  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradora(java.lang.Long)
+2018-04-24 22:16:18.116  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/codigo/{codigo}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradoraPorCodigo(java.lang.String)
+2018-04-24 22:16:18.119  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 22:16:18.119  INFO 18740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 22:16:18.146  INFO 18740 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:16:18.146  INFO 18740 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:16:18.178  INFO 18740 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:16:18.363  INFO 18740 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-24 22:16:18.412  INFO 18740 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-04-24 22:16:18.417  INFO 18740 --- [main] com.medplusco.MedpluscoApplication       : Started MedpluscoApplication in 4.191 seconds (JVM running for 4.726)
+2018-04-24 22:16:24.822  INFO 18740 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-24 22:16:24.823  INFO 18740 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-24 22:16:24.835  INFO 18740 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2018-04-24 22:16:24.871  INFO 18740 --- [http-nio-8080-exec-2] c.m.s.i.PlanAdministradoraServicioImpl   : Buscando Plan de Administradora por Id: 11
+2018-04-24 22:16:24.953  INFO 18740 --- [http-nio-8080-exec-2] c.m.c.PlanAdministradoraControlador      : Ejecutanto medoto buscarPlanAdministradora(): PlanAdministradora{id=11, nombre=Nueva EPS - Capita, codigo=EPS032, contrato=001, fechaInicial=null, fechaFinal=2017-12-31 00:00:00.0, valorContrato=5000.0, activo=S, createdAt=null, updatedAt=null}
+2018-04-24 22:16:25.036  WARN 18740 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to write HTTP message: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS); nested exception is com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.medplusco.dao.modelo.PlanAdministradora["administradora"]->com.medplusco.dao.modelo.Administradora_$$_jvst643_0["handler"])
+2018-04-24 22:23:36.444  INFO 5008 --- [main] com.medplusco.MedpluscoApplicationTests  : Starting MedpluscoApplicationTests on D35KP0W3RT with PID 5008 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 22:23:36.447  INFO 5008 --- [main] com.medplusco.MedpluscoApplicationTests  : No active profile set, falling back to default profiles: default
+2018-04-24 22:23:36.491  INFO 5008 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@10d307f1: startup date [Tue Apr 24 22:23:36 COT 2018]; root of context hierarchy
+2018-04-24 22:23:38.576  INFO 5008 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 22:23:39.349  INFO 5008 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:23:40.778  INFO 5008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:23:41.431  INFO 5008 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7882c44a] of Hibernate SessionFactory for HibernateTransactionManager
+2018-04-24 22:23:42.251  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@10d307f1: startup date [Tue Apr 24 22:23:36 COT 2018]; root of context hierarchy
+2018-04-24 22:23:42.343  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradora(java.lang.Long)
+2018-04-24 22:23:42.343  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.crearAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:23:42.343  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradoras],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Administradora>> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoras()
+2018-04-24 22:23:42.358  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.AdministradoraControlador.eliminarAdministradora(java.lang.Long)
+2018-04-24 22:23:42.358  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.actualizarAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:23:42.358  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoraPorNit(java.lang.String)
+2018-04-24 22:23:42.365  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresa(java.lang.Long)
+2018-04-24 22:23:42.366  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresas],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Empresa>> com.medplusco.controlador.EmpresaControlador.buscarEmpresas()
+2018-04-24 22:23:42.369  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.crearEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:23:42.370  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Eliminar/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.EmpresaControlador.eliminarEmpresa(java.lang.String)
+2018-04-24 22:23:42.372  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresaPorNit(java.lang.String)
+2018-04-24 22:23:42.373  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.actualizarEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:23:42.377  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/codigo/{codigo}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradoraPorCodigo(java.lang.String)
+2018-04-24 22:23:42.378  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.PlanAdministradoraControlador.eliminarPlanAdministradora(java.lang.Long)
+2018-04-24 22:23:42.380  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradora(java.lang.Long)
+2018-04-24 22:23:42.381  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CrearPlanAdministradoras],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:23:42.381  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.actualizarPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:23:42.388  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 22:23:42.388  INFO 5008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 22:23:42.433  INFO 5008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:23:42.433  INFO 5008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:23:42.495  INFO 5008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:23:42.971  INFO 5008 --- [main] com.medplusco.MedpluscoApplicationTests  : Started MedpluscoApplicationTests in 6.953 seconds (JVM running for 7.859)
+2018-04-24 22:23:43.104  INFO 5008 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@10d307f1: startup date [Tue Apr 24 22:23:36 COT 2018]; root of context hierarchy
+2018-04-24 22:23:43.112  INFO 5008 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:23:50.148  INFO 16524 --- [main] com.medplusco.MedpluscoApplication       : Starting MedpluscoApplication on D35KP0W3RT with PID 16524 (started by Win 10 in C:\Users\Win 10\Documents\NetBeansProjects\medplusco\medplusco-service)
+2018-04-24 22:23:50.150  INFO 16524 --- [main] com.medplusco.MedpluscoApplication       : No active profile set, falling back to default profiles: default
+2018-04-24 22:23:50.199  INFO 16524 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57f23557: startup date [Tue Apr 24 22:23:50 COT 2018]; root of context hierarchy
+2018-04-24 22:23:51.722  INFO 16524 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-04-24 22:23:51.737  INFO 16524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-04-24 22:23:51.739  INFO 16524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-24 22:23:51.821  INFO 16524 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-24 22:23:51.825  INFO 16524 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1628 ms
+2018-04-24 22:23:51.939  INFO 16524 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-24 22:23:51.943  INFO 16524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 22:23:51.943  INFO 16524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 22:23:51.944  INFO 16524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 22:23:51.944  INFO 16524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 22:23:51.978  INFO 16524 --- [main] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-04-24 22:23:52.259  INFO 16524 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:23:52.974  INFO 16524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:23:53.342  INFO 16524 --- [main] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2970a5bc] of Hibernate SessionFactory for HibernateTransactionManager
+2018-04-24 22:23:53.589  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57f23557: startup date [Tue Apr 24 22:23:50 COT 2018]; root of context hierarchy
+2018-04-24 22:23:53.649  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradora(java.lang.Long)
+2018-04-24 22:23:53.652  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradoras],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Administradora>> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoras()
+2018-04-24 22:23:53.653  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.AdministradoraControlador.eliminarAdministradora(java.lang.Long)
+2018-04-24 22:23:53.655  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.actualizarAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:23:53.655  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.crearAdministradora(com.medplusco.dao.modelo.Administradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:23:53.656  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Administradora/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.AdministradoraControlador.buscarAdministradoraPorNit(java.lang.String)
+2018-04-24 22:23:53.658  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Nit/{nit}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresaPorNit(java.lang.String)
+2018-04-24 22:23:53.658  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Actualizar/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.actualizarEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:23:53.659  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Crear],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.crearEmpresa(com.medplusco.dao.modelo.Empresa,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:23:53.660  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.EmpresaControlador.buscarEmpresa(java.lang.Long)
+2018-04-24 22:23:53.660  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresas],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.medplusco.dao.modelo.Empresa>> com.medplusco.controlador.EmpresaControlador.buscarEmpresas()
+2018-04-24 22:23:53.661  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/Empresa/Eliminar/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.EmpresaControlador.eliminarEmpresa(java.lang.String)
+2018-04-24 22:23:53.664  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/codigo/{codigo}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradoraPorCodigo(java.lang.String)
+2018-04-24 22:23:53.665  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CrearPlanAdministradoras],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.crearPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder)
+2018-04-24 22:23:53.668  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.medplusco.controlador.PlanAdministradoraControlador.eliminarPlanAdministradora(java.lang.Long)
+2018-04-24 22:23:53.669  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/planAdministradoras/{id}],methods=[PUT],consumes=[application/json],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.actualizarPlanAdministradora(com.medplusco.dao.modelo.PlanAdministradora,org.springframework.web.util.UriComponentsBuilder,java.lang.Long)
+2018-04-24 22:23:53.670  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PlanAdministradoras/{id}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<?> com.medplusco.controlador.PlanAdministradoraControlador.buscarPlanAdministradora(java.lang.Long)
+2018-04-24 22:23:53.673  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 22:23:53.673  INFO 16524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 22:23:53.700  INFO 16524 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:23:53.701  INFO 16524 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:23:53.732  INFO 16524 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:23:53.901  INFO 16524 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-24 22:23:53.949  INFO 16524 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-04-24 22:23:53.953  INFO 16524 --- [main] com.medplusco.MedpluscoApplication       : Started MedpluscoApplication in 4.047 seconds (JVM running for 4.42)
+2018-04-24 22:23:57.715  INFO 16524 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-24 22:23:57.715  INFO 16524 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-24 22:23:57.733  INFO 16524 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2018-04-24 22:23:57.762  INFO 16524 --- [http-nio-8080-exec-3] c.m.s.i.PlanAdministradoraServicioImpl   : Buscando Plan de Administradora por Id: 11
+2018-04-24 22:23:57.823  INFO 16524 --- [http-nio-8080-exec-3] c.m.c.PlanAdministradoraControlador      : Ejecutanto medoto buscarPlanAdministradora(): PlanAdministradora{id=11, nombre=Nueva EPS - Capita, codigo=EPS032, contrato=001, fechaInicial=null, fechaFinal=2017-12-31 00:00:00.0, valorContrato=5000.0, activo=S, createdAt=null, updatedAt=null}

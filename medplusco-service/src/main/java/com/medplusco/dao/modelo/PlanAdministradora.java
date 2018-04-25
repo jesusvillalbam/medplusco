@@ -28,6 +28,7 @@ import org.springframework.data.annotation.LastModifiedDate;
  */
 @Entity
 @Table(name="PLANADM")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PlanAdministradora implements Serializable {
     
     @Id
@@ -66,7 +67,7 @@ public class PlanAdministradora implements Serializable {
     @JsonIgnore
     private Date updatedAt;
     
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ID_ADMINISTRADORA")
     private Administradora idAdministradora;

@@ -6,6 +6,7 @@
 package com.medplusco.dao.modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="ADMINISTRADORAS")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Administradora implements Serializable {
     
     @Id
@@ -54,6 +56,10 @@ public class Administradora implements Serializable {
     
     @Column(name= "ACTIVO")
     private String activo;
+    
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idAdministradora")
+    private List<PlanAdministradora> planesAdministradoras;
     
     public Long getId() {
         return id;
@@ -126,6 +132,15 @@ public class Administradora implements Serializable {
     public void setActivo(String activo) {
         this.activo = activo;
     }
+
+    public List<PlanAdministradora> getPlanesAdministradoras() {
+        return planesAdministradoras;
+    }
+
+    public void setPlanesAdministradoras(List<PlanAdministradora> planesAdministradoras) {
+        this.planesAdministradoras = planesAdministradoras;
+    }
+    
     
     @Override
     public int hashCode() {
