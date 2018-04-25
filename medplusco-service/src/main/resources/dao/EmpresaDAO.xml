@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings version="1.0"
+                 xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd ">
+
+    <named-native-query name="Consultar.empresa">
+        <query>
+            <![CDATA[ 
+                SELECT * FROM MEDPLUSCO.EMPRESAS WHERE NIT = :NIT
+            ]]> 
+        </query>
+    </named-native-query>
+    
+    <!--
+    <named-stored-procedure-query name = "anulacionArim.anularArim"  
+                                  procedure-name = "SPRCOBJ.SPANULARIM" 
+                                  call-by-index = "true" > 
+        <parameter direction = "IN" 
+                   name = "aTpoDocto" 
+                   query-parameter = "tipoDocumento"/>
+        <parameter direction = "IN" 
+                   name = "nArim " 
+                   query-parameter = "numeroDocumento"/>
+        <parameter direction = "IN" 
+                   name = "nFactura" 
+                   query-parameter = "numeroFactura"/>
+        <parameter direction = "IN" 
+                   name = "aUsuario" 
+                   query-parameter = "usuarioAnulador"/>
+    </named-stored-procedure-query> 
+    -->
+    
+</entity-mappings>
