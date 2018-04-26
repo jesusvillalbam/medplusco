@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ import org.springframework.data.annotation.LastModifiedDate;
  */
 @Entity
 @Table(name = "EMPRESAS")
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Empresa implements Serializable{
     
     @Id
@@ -65,6 +66,10 @@ public class Empresa implements Serializable{
     @LastModifiedDate
     @JsonIgnore
     private Date updatedAt;
+    
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa")
+    private List<Paciente> pacientes;
     
 //    @OneToMany(mappedBy = "idEmpresa")
 //    private List<Administradora> administradora;
