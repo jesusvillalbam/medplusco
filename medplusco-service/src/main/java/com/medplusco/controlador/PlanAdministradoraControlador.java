@@ -53,24 +53,6 @@ public class PlanAdministradoraControlador {
     }
     
     /**
-     * Busqueda de planes de administadoras por codigo
-     * @param codigo
-     * @return
-     */
-    @RequestMapping(value = "/PlanAdministradoras/codigo/{codigo}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<?> buscarPlanAdministradoraPorCodigo(@PathVariable String codigo) {
-        
-        PlanAdministradora planAdm = PlanAdministradoraServicio.buscarPlanAdministradoraPorCodigo(codigo);
-        if(LOGGER.isInfoEnabled()){
-            LOGGER.info("Ejecutanto medoto buscarPlanAdministradoraPorCodigo(): " +planAdm);
-        }
-        if (planAdm == null || !planAdm.equals(planAdm)){
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(planAdm, HttpStatus.OK);
-    }
-    
-    /**
      * Metodo para crear planes de administradoras
      * @param planAdm
      * @param uriComponentsBuilder
@@ -84,7 +66,8 @@ public class PlanAdministradoraControlador {
             LOGGER.info("Ejecutanto medoto crearPlanAdministradora(): " +planAdm);
         }        
             PlanAdministradoraServicio.crearPlanAdministradora(planAdm);
-            PlanAdministradora planAdm2 = PlanAdministradoraServicio.buscarPlanAdministradoraPorCodigo(planAdm.getCodigo());
+            PlanAdministradora planAdm2 = PlanAdministradoraServicio
+                    .buscarPlanAdministradora(planAdm.getAdministradora().getId());
 		HttpHeaders headers = new HttpHeaders();
                 LOGGER.info("Se obtiene el id del plan: " +planAdm2.getId());
 		headers.setLocation(

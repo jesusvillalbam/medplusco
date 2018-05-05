@@ -8,6 +8,7 @@ package com.medplusco.dao.modelo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -49,13 +50,13 @@ public class Empresa implements Serializable{
     private String direccion;
     
     @Column(name="FECHA_AFILIACION")
-    private Date fechaAfiliacion;
+    private LocalDate fechaAfiliacion;
     
     @Column(name="FECHA_VENCIMIENTO")
-    private Date fechaVencimiento;
+    private LocalDate fechaVencimiento;
     
-    @Column(name="ACTIVO")
-    private String activo;
+    @Column(name="ESTADO")
+    private String estado;
     
     @Column(nullable = false, updatable = false)
     @CreatedDate
@@ -69,10 +70,12 @@ public class Empresa implements Serializable{
     
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa")
-    private List<Paciente> pacientes;
+    private List<PlanAdministradora> planAdministradoras;
     
-//    @OneToMany(mappedBy = "idEmpresa")
-//    private List<Administradora> administradora;
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa")
+    private List<Medico> medicos;
+    
     
     public Long getId() {
         return id;
@@ -114,28 +117,28 @@ public class Empresa implements Serializable{
         this.direccion = direccion;
     }
 
-    public Date getFechaAfiliacion() {
+    public LocalDate getFechaAfiliacion() {
         return fechaAfiliacion;
     }
 
-    public void setFechaAfiliacion(Date fechaAfiliacion) {
+    public void setFechaAfiliacion(LocalDate fechaAfiliacion) {
         this.fechaAfiliacion = fechaAfiliacion;
     }
 
-    public Date getFechaVencimiento() {
+    public LocalDate getFechaVencimiento() {
         return fechaVencimiento;
     }
 
-    public void setFechaVencimiento(Date fechaVencimiento) {
+    public void setFechaVencimiento(LocalDate fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
 
-    public String getActivo() {
-        return activo;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setActivo(String activo) {
-        this.activo = activo;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Date getCreatedAt() {
@@ -194,7 +197,7 @@ public class Empresa implements Serializable{
         if (!Objects.equals(this.fechaVencimiento, other.fechaVencimiento)) {
             return false;
         }
-        if (!Objects.equals(this.activo, other.activo)) {
+        if (!Objects.equals(this.estado, other.estado)) {
             return false;
         }
         return Objects.equals(this.id, other.id);
@@ -209,6 +212,6 @@ public class Empresa implements Serializable{
                 ", direccion=" + direccion + 
                 ", fechaAfiliacion=" + fechaAfiliacion + 
                 ", fechaVencimiento=" + fechaVencimiento + 
-                ", activo=" + activo + '}';
+                ", estado=" + estado + '}';
     }
 }

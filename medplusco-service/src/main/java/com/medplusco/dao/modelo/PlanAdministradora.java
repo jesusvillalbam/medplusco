@@ -8,6 +8,7 @@ package com.medplusco.dao.modelo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -39,23 +40,20 @@ public class PlanAdministradora implements Serializable {
     @Column(name="NOMBRE")
     private String nombre;
     
-    @Column(name="CODIGO")
-    private String codigo;
-    
     @Column(name="CONTRATO")
     private String contrato;
     
     @Column(name="FECHAINI")
-    private Date fechaInicial;
+    private LocalDate fechaInicial;
     
     @Column(name="FECHAFIN")
-    private Date fechaFinal;
+    private LocalDate fechaFinal;
     
     @Column(name="VALOR_CONTRATO")
     private double valorContrato;
     
-    @Column(name="ACTIVO")
-    private String activo;
+    @Column(name="ESTADO")
+    private String estado;
     
     @Column(nullable = false, updatable = false)
     @CreatedDate
@@ -67,10 +65,13 @@ public class PlanAdministradora implements Serializable {
     @JsonIgnore
     private Date updatedAt;
     
-    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ID_ADMINISTRADORA")
     private Administradora idAdministradora;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="IDEMPRESA")
+    private Empresa empresa;
 
     public Long getId() {
         return id;
@@ -88,14 +89,6 @@ public class PlanAdministradora implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
     public String getContrato() {
         return contrato;
     }
@@ -104,19 +97,19 @@ public class PlanAdministradora implements Serializable {
         this.contrato = contrato;
     }
 
-    public Date getFechaInicial() {
+    public LocalDate getFechaInicial() {
         return fechaInicial;
     }
 
-    public void setFechaInicial(Date fechaInicial) {
+    public void setFechaInicial(LocalDate fechaInicial) {
         this.fechaInicial = fechaInicial;
     }
 
-    public Date getFechaFinal() {
+    public LocalDate getFechaFinal() {
         return fechaFinal;
     }
 
-    public void setFechaFinal(Date fechaFinal) {
+    public void setFechaFinal(LocalDate fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
@@ -128,12 +121,12 @@ public class PlanAdministradora implements Serializable {
         this.valorContrato = valorContrato;
     }
 
-    public String getActivo() {
-        return activo;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setActivo(String activo) {
-        this.activo = activo;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Date getCreatedAt() {
@@ -160,11 +153,20 @@ public class PlanAdministradora implements Serializable {
         this.idAdministradora = idAdministradora;
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 89 * hash + Objects.hashCode(this.id);
-        hash = 89 * hash + Objects.hashCode(this.codigo);
         return hash;
     }
 
@@ -186,13 +188,10 @@ public class PlanAdministradora implements Serializable {
         if (!Objects.equals(this.nombre, other.nombre)) {
             return false;
         }
-        if (!Objects.equals(this.codigo, other.codigo)) {
-            return false;
-        }
         if (!Objects.equals(this.contrato, other.contrato)) {
             return false;
         }
-        if (!Objects.equals(this.activo, other.activo)) {
+        if (!Objects.equals(this.estado, other.estado)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
@@ -213,12 +212,11 @@ public class PlanAdministradora implements Serializable {
     public String toString() {
         return "PlanAdministradora{" + "id=" + id + ", "
                 + "nombre=" + nombre + ", "
-                + "codigo=" + codigo + ", "
                 + "contrato=" + contrato + ", "
                 + "fechaInicial=" + fechaInicial + ", "
                 + "fechaFinal=" + fechaFinal + ", "
                 + "valorContrato=" + valorContrato + ", "
-                + "activo=" + activo + ", "
+                + "estado=" + estado + ", "
                 + "createdAt=" + createdAt + ", "
                 + "updatedAt=" + updatedAt + '}';
     }

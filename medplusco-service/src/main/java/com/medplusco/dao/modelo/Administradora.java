@@ -16,8 +16,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -56,8 +54,8 @@ public class Administradora implements Serializable {
     @Column(name= "REPRESENTANTE_LEGAL")
     private String representanteLegal;
     
-    @Column(name= "ACTIVO")
-    private String activo;
+    @Column(name= "ESTADO")
+    private String estado;
     
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idAdministradora")
@@ -131,12 +129,12 @@ public class Administradora implements Serializable {
         this.representanteLegal = representanteLegal;
     }
 
-    public String getActivo() {
-        return activo;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setActivo(String activo) {
-        this.activo = activo;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public List<PlanAdministradora> getPlanesAdministradoras() {
@@ -190,7 +188,7 @@ public class Administradora implements Serializable {
         if (!Objects.equals(this.representanteLegal, other.representanteLegal)) {
             return false;
         }
-        if (!Objects.equals(this.activo, other.activo)) {
+        if (!Objects.equals(this.estado, other.estado)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
@@ -209,7 +207,7 @@ public class Administradora implements Serializable {
                 + "direccion=" + direccion + ", "
                 + "telefono=" + telefono + ", "
                 + "representanteLegal=" + representanteLegal + ", "
-                + "activo=" + activo + '}';
+                + "estado=" + estado + '}';
     }
 
 

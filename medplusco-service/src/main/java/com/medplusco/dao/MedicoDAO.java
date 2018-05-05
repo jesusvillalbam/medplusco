@@ -5,16 +5,16 @@
  */
 package com.medplusco.dao;
 
-import com.medplusco.dao.modelo.PlanAdministradora;
+import com.medplusco.dao.modelo.Medico;
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Jdvillalba
+ * @author Win 10
  */
 @Repository
-public interface PlanAdministradoraDAO extends JpaRepository<PlanAdministradora, Serializable>{
+public interface MedicoDAO extends JpaRepository<Medico, Serializable>{
     
 }

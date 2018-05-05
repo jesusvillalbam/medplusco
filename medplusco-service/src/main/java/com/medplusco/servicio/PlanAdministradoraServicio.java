@@ -15,8 +15,6 @@ public interface PlanAdministradoraServicio {
     
     public PlanAdministradora buscarPlanAdministradora(Long id);
     
-    public PlanAdministradora buscarPlanAdministradoraPorCodigo(String codigo);     
-    
     public void crearPlanAdministradora(PlanAdministradora PlanAdministradora);       
     
     public void eliminarPlanAdministradora(Long id);

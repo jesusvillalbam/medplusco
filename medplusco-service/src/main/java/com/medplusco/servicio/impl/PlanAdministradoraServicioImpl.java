@@ -37,17 +37,8 @@ public class PlanAdministradoraServicioImpl implements PlanAdministradoraServici
     }
     
     @Override
-    public PlanAdministradora buscarPlanAdministradoraPorCodigo(String codigo) {
-        if (LOGGER.isInfoEnabled()){
-            LOGGER.info("Buscando Plan de Administradora por Codigo: " +codigo);    
-        }
-        PlanAdministradora planAdm = planAdministradoraDAO.findByCodigo(codigo);
-        return planAdm;
-    }
-    
-    @Override
     public void crearPlanAdministradora(PlanAdministradora planAdministradora) {
-        Administradora adm = administradoraDAO.findByCodigo(planAdministradora.getCodigo());
+        Administradora adm = administradoraDAO.findOne(planAdministradora.getAdministradora().getId());
         if (LOGGER.isInfoEnabled()){
         LOGGER.info("Creando Plan de Administradora: " +adm);    
         }
